@@ -16,8 +16,12 @@ const computerSchema = new Schema(
     storage:{
         ram_size: { type: String, required: false },
         type: { type: String, required: false },
+        disk: { type: String, required: false }
     },
-    graphics_card: { type: String, required: false },
+    display:{
+        graphics_card: { type: String, required: false },
+        size: { type: String, required: false }
+    },
     operation_system: { type: String, required: false },
     prices:{
         regular_price: { type: mongoose.Decimal128, required: true },
