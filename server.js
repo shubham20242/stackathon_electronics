@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 const db = require('./db')
 const PORT = process.env.PORT || 3001
 const Controller1 = require('./controllers/Controller1')
-const Controller2 = require('./controllers/Controller2')
+const computerController = require('./controllers/computerController')
 const TvController = require('./controllers/tvController')
 
 const app = express()
@@ -25,3 +25,19 @@ app.put('/tv/:id', TvController.updateTv)
 app.delete('/tv/:id', TvController.deleteTv)
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
+
+
+//\\\\\\\\\\\\\\[==== Start =|=  Denesh - Service scripts =======]||||||||||||
+
+app.get('/computers',computerController.getAllComputer)
+
+app.get('/computers/:id',computerController.getComputersById)
+
+app.get('/computers?brand=value1&type=value2',computerController.getComputersByBrandName)
+
+app.post('/computers',computerController.createComputer)
+
+app.put('/computers/:id',computerController.updateComputer)
+
+app.delete('/computers/:id',computerController.deleteComputer)
+//\\\\\\\\\\\\\\[==== End =|=  Denesh - Service scripts =======]||||||||||||
