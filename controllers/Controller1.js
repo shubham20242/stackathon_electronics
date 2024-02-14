@@ -1,5 +1,5 @@
 //We only need this once!
-const Model1 = require('../models/model1')
+// const Model1 = require('../models/model1')
 
 const getAllModel1 = async (req, res) => {
     try {
